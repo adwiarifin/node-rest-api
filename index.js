@@ -1,12 +1,22 @@
 // import / dependency
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors');
+const helmet = require('helmet');
+const bottleneck = require('bottleneck');
 
 // body
 const app = express();
 const port = 1234;
 
 app.use(bodyParser());
+app.use(cors());
+app.use(helmet());
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path}`);
+  next();
+});
 
 app.get("/", (req, res) => {
   console.log(req.query); // {}
