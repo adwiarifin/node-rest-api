@@ -3,7 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
-const bottleneck = require("bottleneck");
 
 const indexRouter = require("./router");
 
@@ -11,7 +10,8 @@ const indexRouter = require("./router");
 const app = express();
 const port = 1234;
 
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
 
