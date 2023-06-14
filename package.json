@@ -2,9 +2,9 @@
   "name": "learn_nodejs_2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app/index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/app/index.js"
   },
   "keywords": [],
   "author": "",

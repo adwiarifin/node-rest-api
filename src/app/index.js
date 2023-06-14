@@ -1,11 +1,11 @@
 // import / dependency
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require('cors');
-const helmet = require('helmet');
-const bottleneck = require('bottleneck');
+const cors = require("cors");
+const helmet = require("helmet");
+const bottleneck = require("bottleneck");
 
-const indexRouter = require('./router');
+const indexRouter = require("./router");
 
 // body
 const app = express();
@@ -15,7 +15,7 @@ app.use(bodyParser());
 app.use(cors());
 app.use(helmet());
 
-app.use('/', indexRouter);
+app.use("/", indexRouter);
 
 // listen
 app.listen(port, () => {
