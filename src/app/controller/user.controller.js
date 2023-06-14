@@ -1,13 +1,28 @@
+const userService = require("../service/user.service");
+
 const getAllUsers = (req, res) => {
-  res.send("get /user");
+  // take input
+
+  // transform if needed, combine body + headers together
+
+  // calling service
+  const response = userService.getAllUsers();
+
+  // response to client
+  res.send(response);
 };
 
 const getUserDetails = (req, res) => {
-  res.send("get /user/:id");
+  console.log(req.params);
+  const response = userService.getUserDetails(req.params.id);
+  res.send(response);
 };
 
 const registerUser = (req, res) => {
-  res.send("post /user");
+  const models = req.body;
+
+  const response = userService.registerUser(models);
+  res.send(response);
 };
 
 module.exports = {
